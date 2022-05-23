@@ -81,10 +81,10 @@ Scenario Outline: 1.1_07 User can sign in with valid sign in credentials on edge
    | Use another account                     | Clicks | Redirects to sign in with valid google account |
    And User clicks on 'Use another account'
    And following features are displayed on the screen
-   | Feature                  | Action							| Button | 
-   | Enter                    | Valid input						| Click  |
-   | Email or phone textfield | beatriceoluwakemisola@gmail.com | Next   | 
-   | Enter your password      | VirusDetectedK006				| Next   | 
+   | Feature                  | Action											| Button | 
+   | Enter                    | Valid input										| Click  |
+   | Email or phone textfield | beatriceoluwakemisola@gmail.com or +7938910000	| Next   | 
+   | Enter your password      | VirusDetectedK006								| Next   | 
    And user is at the homepage
 
 Scenario Outline: 1.1_08 User forgets 'email address'
