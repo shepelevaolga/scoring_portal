@@ -20,7 +20,7 @@ Scenario: 1.1_02 Sign in with Google account with valid credentials
 	And user clicks "Next" button
 	And user fills in "Abcd1234" in "Enter your password" text field
 	And user clicks "Next" button
-	Then user is signed in to the app
+	Then user is signed in to app
 	And user is taken to "Dataset" page of the app
 
 Scenario: 1.1_03 Sign in with valid Password swapped with Email
@@ -82,7 +82,7 @@ Scenario: 1.1_09 Sign in with invalid Email for Google account
 Scenario: 1.1_10 Sign in when only user's Google account is signed in on device
 	Given user's Google account is signed in on device
 	When user hits "Sign in with Google" button
-	Then user is signed in the app
+	Then user is signed in to app
 	And user is taken to "Dataset" page of the app
 
 Scenario: 1.1_11 Sign in when user's two Google accounts are signed in on device
@@ -92,7 +92,7 @@ Scenario: 1.1_11 Sign in when user's two Google accounts are signed in on device
 	And both user's Google accounts are signed in on device
 	When user hits "Sign in with Google" button
 	And  user clicks on "yana.aleeva@quantori.academy" in "Choose an account" list
-	Then user is signed in the app
+	Then user is signed in to app
 	And user is taken to "Dataset" page of the app
 
 Scenario: 1.1_12 Sign in when user with Google account is signed out on device
@@ -101,7 +101,7 @@ Scenario: 1.1_12 Sign in when user with Google account is signed out on device
 	And user clicks "yana.aleeva@gmail.com" in "Choose an account" list
 	And  user fills in "Abcd1234" in "Enter your password” text field
 	And user clicks "Next"button
-	Then user is signed in to the app
+	Then user is signed in to app
 	And user is taken to ‘Dataset’ page of the app
 
 Scenario: 1.1_13 Sign in with adding the Google account
@@ -116,7 +116,7 @@ Scenario: 1.1_13 Sign in with adding the Google account
 	And  user clicks "Next" button
 	And user enters "Abcd1235" in "Enter your password" text field
 	And user clicks "Next" button
-	Then user is signed in
+	Then user is signed in to app
 	And user is taken to "Dataset" page
 
 Scenario: 1.1_14 Sign in with not a Google account
