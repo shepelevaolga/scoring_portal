@@ -15,7 +15,7 @@ Scenario Outline: 1.1_01 Signing in with invalid credentials
   And user clicks the 'Next' button
    And user fills the password textbox with value 'incorrect.password'
    And user clicks the 'Next' button
-  Then a text 'Can't login! Wrong email or password.' should appear in the validation errors region
+  Then a text 'Can't login! Wrong email or password.' appears in the validation errors region
 
 Scenario Outline: 1.1_02 Signing in with invalid email credentials
 Given user is at the sign in page 
@@ -24,7 +24,7 @@ And user clicks on 'Use another account'
  When user fills the account email textbox with value 'incorrect@yahoo.com'
  And user clicks the 'Next' button
   Then the 'email textfield'is marked red. 
-	And a text 'Couldn't find your Google account' should appear in the validation errors region
+	And a text 'Couldn't find your Google account' appears in the validation errors region
 
 Scenario Outline: 1.1_03 Signing in with empty 'email' textbox
  Given user is at the sign in page
@@ -33,7 +33,7 @@ And user clicks on 'Use another account'
   When user leaves the account email textbox empty
    And user clicks the 'Next' button
  Then the 'email textfield'is marked red. 
- And 'Enter email or phone number' should appear in the validation errors region
+ And 'Enter email or phone number' appears in the validation errors region
 
  Scenario Outline: 1.1_04 Signing in with empty 'password' textbox
  Given user is at the sign in page
@@ -43,7 +43,7 @@ And user clicks on 'Use another account'
    But user leaves the password textbox empty
    And user clicks the 'Next' button
  Then the 'password textfield'is marked red. 
-	And 'Enter a password' should appear in the validation errors region
+	And 'Enter a password' appears in the validation errors region
 
 @Recoverychecks
 Scenario Outline: 1.1_05 User sign in with valid email and the laptop sleeps due to inactivity 
@@ -54,7 +54,7 @@ but user fails to click 'Next' button
     And user screen goes off due to inactivity 
   Then display a dialogue box 'You're not signed in' 
   And 'Your session ended because there was no activity. Try signing in again' should appear
- And 'Try again' button in the dialogue box
+ And 'Try again' button in the dialog box
 
  Scenario Outline: 1.1_06 User sign in with valid email and unplugs internet connection 
  Given user is at the sign in page
@@ -64,7 +64,8 @@ And user clicks on 'Use another account'
    And user turnoff internet connection 
    And user clicks on 'Next' button
     Then display a dialogue box 'Something went wrong' 
-  And 'Sorry, something went wrong there. Try again.' should appear
+  And 'Sorry, something went wrong there. 
+  And Try again.' dialog box appears
 
 @PortabilityChecks
 @PositiveScenarios
@@ -93,12 +94,12 @@ Scenario Outline: 1.1_08 User forgets 'email address'
  And user clicks on 'forget email?'
   Then 'find your email' dialog box open  
    And the following features are displayed on the screen
-   | Feature                            | Action                                                         | Button |
-   | Enter                              | Valid input                                                    | Click  |
-   | Email or phone textfield           | beatriceoluwakemisola@gmail.com                                | Next   |
-   | What's your name? dialog box       | Enter First name 'Beatrice' and Last 'O' name in the textfield | Next   |
-   | Get a verification code dialog box |                                                                | Send   |
-   | Enter the code  dialog box         | Enter verification code '631025'                               | Next   |
+   | Feature                            | Action																| Button |
+   | Enter                              | Valid input															| Click  |
+   | Email or phone textfield           | beatriceoluwakemisola@gmail.com										| Next   |
+   | What's your name? dialog box       | Enter First name 'Beatrice' and Last name 'O' name in the textfield   |Next   |
+   | Get a verification code dialog box |																		| Send   |
+   | Enter the code  dialog box         | Enter verification code '631025'										| Next   |
    And 'choose an account' dialog box pops up
    And user selects the 'google account' and enters the homepage
  
