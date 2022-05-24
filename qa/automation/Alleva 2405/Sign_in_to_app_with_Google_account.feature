@@ -16,7 +16,7 @@ Scenario: 1.1_01 Sign in with Google account with valid credentials
 	Then user is signed in to app
 	And user is taken to "Dataset" page of the app
 
-	Scenario: 1.1_02 Sign in with not a Google account
+Scenario: 1.1_02 Sign in with not a Google account
 	Given no user's Google account is registered on device
 	And  user account with valid credentials exists:
 		| Email              | Password |
