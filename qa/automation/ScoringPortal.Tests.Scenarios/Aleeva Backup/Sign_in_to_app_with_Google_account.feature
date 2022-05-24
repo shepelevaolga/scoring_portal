@@ -123,7 +123,7 @@ Scenario: 1.1_14 Sign in with not a Google account
 	Given no user's Google account is registered on device
 	And  user account with valid credentials exists:
 		| Email              | Password |
-		| yanaaleeva@mail.ru | Abcd1234 |
+		| yana.aleeva@mail.ru | Abcd1234 |
 	When user hits "Sign in with Google" button
 	And  user fills in "yanaaleeva@mail.ru" in "Email or phone" text field
 	And  user clicks "Next" button
