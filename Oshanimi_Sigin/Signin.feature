@@ -74,7 +74,7 @@ Scenario Outline: 1.1_08 Sign in with valid saved Google account on different br
 	Given 'Choose an option' dialog box is displayed
 	And user clicks on 'Use another account'
 	When user clicks the 'Next' button
-	Then number of emails are displayed on the signin page to 'Choose an account to continue to quantori.com'
+	Then number of emails are displayed on the signin page to 'Choose an account to continue to quantori.com
 	| Feature                                 | Action | State                                          |
 	| beatricek006@gmail.com                  | Clicks | Enter homepage                                 |
 	| oshanimioluwakemi@gmail.com             | Clicks | Enter homepage                                 |
@@ -84,8 +84,8 @@ Scenario Outline: 1.1_08 Sign in with valid saved Google account on different br
    And following features are displayed on the screen
    | Feature                  | Action							| Button | 
    | Enter                    | Valid input						| Click  |
-   | Email or phone textfield | beatriceoluwakemisola@gmail.com				| Next   |
-   | Enter your password      | VirusDetectedK006					| Next   | 
+   | Email or phone textfield | beatriceoluwakemisola@gmail.com	| Next   |
+   | Enter your password      | VirusDetectedK006				| Next   | 
    And user is at the homepage
     
 		Examples: 
@@ -99,12 +99,12 @@ Scenario Outline: 1.1_09 User forgets 'email address'
 	And user clicks on 'forget email?'
 	Then 'find your email' dialog box open  
    And the following features are displayed on the screen
-		| Feature                            | Action								    | Button |
-		| Enter                              | Valid input							    | Click  |
-		| Email or phone textfield           | beatriceoluwakemisola@gmail.com					    | Next   |
+		| Feature                            | Action																| Button |
+		| Enter                              | Valid input															| Click  |
+		| Email or phone textfield           | beatriceoluwakemisola@gmail.com										| Next   |
 		| What's your name? dialog box       | Enter First name 'Beatrice' and Last name 'O' name in the textfield  | Next   |
-		| Get a verification code dialog box |									    | Send   |
-		| Enter the code  dialog box         | Enter verification code '631025'					    | Next   |
+		| Get a verification code dialog box |																		| Send   |
+		| Enter the code  dialog box         | Enter verification code '631025'										| Next   |
    And 'choose an account' dialog box pops up
    And user selects the 'google account' and enters the scoring homepage
  
