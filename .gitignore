@@ -348,3 +348,4 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/qa/automation/ScoringPortal.Tests.Scenarios/1. Access to Portal/Access
