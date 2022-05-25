@@ -67,7 +67,7 @@ Scenario Outline: 1.1_07 Sign in with valid phone number
 	When user fills the account 'email or phone number' textbox with value '+78972028989' 
 	And user clicks 'Next' button
 	And user fills the password text field with 'Monkeytail2@' 
-    And user clicks 'Next' button
+    	And user clicks 'Next' button
 	Then user enters the scoring homepage
 
 Scenario Outline: 1.1_08 Sign in with valid saved Google account on different browsers
