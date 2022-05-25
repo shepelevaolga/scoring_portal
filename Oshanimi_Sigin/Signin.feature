@@ -99,7 +99,7 @@ Scenario Outline: 1.1_09 User forgets 'email address'
 	And user clicks on 'forget email?'
 	Then 'find your email' dialog box open  
    And the following features are displayed on the screen
-		| Feature                            | Action																| Button |
+		| Feature                            | Action								    | Button |
 		| Enter                              | Valid input							    | Click  |
 		| Email or phone textfield           | beatriceoluwakemisola@gmail.com					    | Next   |
 		| What's your name? dialog box       | Enter First name 'Beatrice' and Last name 'O' name in the textfield  | Next   |
