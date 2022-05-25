@@ -84,8 +84,8 @@ Scenario Outline: 1.1_08 Sign in with valid saved Google account on different br
    And following features are displayed on the screen
    | Feature                  | Action							| Button | 
    | Enter                    | Valid input						| Click  |
-   | Email or phone textfield | beatriceoluwakemisola@gmail.com	| Next   |
-   | Enter your password      | VirusDetectedK006				| Next   | 
+   | Email or phone textfield | beatriceoluwakemisola@gmail.com				| Next   |
+   | Enter your password      | VirusDetectedK006					| Next   | 
    And user is at the homepage
     
 		Examples: 
@@ -98,7 +98,7 @@ Scenario Outline: 1.1_09 User forgets 'email address'
 	When user clicks on 'Use another account'
 	And user clicks on 'forget email?'
 	Then 'find your email' dialog box open  
-   And the following features are displayed on the screen
+   	And the following features are displayed on the screen
 		| Feature                            | Action	 							    | Button |
 		| Enter                              | Valid input							    | Click  |
 		| Email or phone textfield           | beatriceoluwakemisola@gmail.com					    | Next   |
