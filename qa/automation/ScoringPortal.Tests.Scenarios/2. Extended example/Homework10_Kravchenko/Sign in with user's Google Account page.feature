@@ -1,19 +1,20 @@
 Feature: 1.1 Sign in with user's Google Account 
 
 Background:
-	Given users created with a valid Google Account
+	Given users have created valid Google Accounts
 	And user is on https://qa.ddso-spot.quantori.com/ page
 
 @tc:5643
-Scenario Outline: 1.1-01 Login page is displayed
+Scenario Outline: 1.1_01 Login page is displayed
 	Given a link to login page
-	When user opens a link
+	When user clicks "sign in with Google"
 	Then Login page is displayed
 	
 @tc:6789
-Scenario Outline: 1.1-02 User can log-in the application
+Scenario Outline: 1.1_02 User can log-in the application
 	Given a valid user in "<Browser>" and "<OS>"
-	When user logs-in with <"Login"> and <"Password">
+	When user enters <"Login"> and <"Password">
+	And user clicks button "sign in"
 	Then logging-in is successful
 	And home page is displayed
 	# PW technique was used (Browser, OS, and Login: number or mail)
@@ -34,14 +35,14 @@ Examples:
 	| Opera           | Windows | +78965678900            | TestPass12  |
 
 @tc:6757
-Scenario Outline: 1.1-03 User can log-out the application
+Scenario Outline: 1.1_03 User can log-out the application
 	Given a valid logged-in user
-	When user logs-out
+	When user clicks log-out button
 	Then logging-out is successful
 	And login page is displayed
 
 @tc:9034
-Scenario Outline: 1.1-04 Check authentication of logged-in user in a new tab
+Scenario Outline: 1.1_04 Check authentication of logged-in user in a new tab
 	Given a valid logged-in user in "<Browser>" and "<OS>" 
 	When user opens home page in a new tab
 	Then home page is opened
@@ -63,14 +64,16 @@ Examples:
 	| Mozilla FireFox | Mac     | 
 
 @tc:2345
-Scenario Outline: 1.1-05 Home page is reloaded after log-out
+Scenario Outline: 1.1_05 Home page is reloaded after log-out
 	Given a valid logged-in user
+	And user copied the home page link
 	And home page link leads to home page
-	When user log-out
+	When user logs-out
+	And user opens home page link in the browser
 	Then home page link leads to login page
 	
 @tc:4567
-Scenario Outline: 1.1-07 User can't log-in to the application with incorrect credentials
+Scenario Outline: 1.1_06 User can't log-in to the application with incorrect credentials
 	Given a valid user
 	When user enters "<Login>" and "<Password>"
 	Then logging-in is failed
@@ -83,7 +86,7 @@ Examples:
 	| testUser@gmail.com | wrongtest | Password   | Password     |
 
 @tc:7834
-Scenario Outline: 1.1-08 Sign in with valid Password swapped with Login
+Scenario Outline: 1.1_07 Sign in with valid Password swapped with Login
 	Given a valid user
 	When user enters Password in Login field
 	And try to continue logging-in
