@@ -6,27 +6,27 @@ Background:
   And Google's authorization page is opened
 
 
-Scenario: 1.1.1 Happy path
-  Given user enters valid crendentials from his personal google account
+Scenario: 1.1.1 Happy path (logging in with valid credentials)
+  Given user entered valid crendentials from his personal google account
   When user clicks "sign in"
   Then the main page of application is opened
 
 
 Scenario: 1.1.2 Invalid credentials
   Scenario: 1.1.2.1 Invalid address of e-mail
-     Given user enters invalid login (e-mail address)
+     Given user entered invalid login (e-mail address)
      When user clicks "Next"
      Then authorization is failed because Google can't find the account
 
   Scenario: 1.1.2.2 Invalid password
-     Given user enters valid login
+     Given user entered valid login
      And user enters incorrect password
      When user clicks "sign in"
      Then authorization is failed because Google can't find the account
 
 
 Scenario: 1.1.3 Authorization with another domain
-  Given user enters valid e-mail from another domain (e.g. @mail.ru)
+  Given user entered valid e-mail from another domain (e.g. @mail.ru)
   When user clicks "next"
   Then authorization is failed because Google can't find the account
 
