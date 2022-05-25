@@ -58,7 +58,7 @@ Scenario Outline: 1.1_06 Sign in with valid email account
 	When user fills the account email textbox with value 'beatricek006@gmail.com' 
 	And user clicks 'Next' button
 	And user fills the password textfield with 'Monkeytail2@' 
-    And user clicks 'Next' button
+    	And user clicks 'Next' button
 	Then user enters the scoring homepage
 
 Scenario Outline: 1.1_07 Sign in with valid phone number 
