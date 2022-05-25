@@ -84,8 +84,8 @@ Scenario Outline: 1.1_08 Sign in with valid saved Google account on different br
    And following features are displayed on the screen
    | Feature                  | Action							| Button | 
    | Enter                    | Valid input						| Click  |
-   | Email or phone textfield | beatriceoluwakemisola@gmail.com	| Next   | 
-   | Enter your password      | VirusDetectedK006				| Next   | 
+   | Email or phone textfield | beatriceoluwakemisola@gmail.com	| Next   		| 	 |
+   | Enter your password      | VirusDetectedK006					| Next   | 
    And user is at the homepage
     
 		Examples: 
@@ -123,7 +123,7 @@ Scenario Outline: 1.1_11 Sign in with valid email and unplugs internet connectio
 	When user fills the account email textbox with value 'incorrect@gmail.com'
 	And user turnoff internet connection 
 	And user clicks on 'Next' button
-    Then display a dialogue box 'Something went wrong' 
+    	Then display a dialogue box 'Something went wrong' 
 	And 'Sorry, something went wrong there. 
 	And Try again.' dialog box appears
 
@@ -132,7 +132,8 @@ Scenario Outline: 1.1_12 Sign in with valid email and the laptop sleeps due to i
 	Given user is at the sign in page
 	When user fills the account email text field with value 'incorrect@gmail.com'
 	And user fails to click the 'Next' button 
-    And user screen goes off due to inactivity 
+    	And user screen goes off due to inactivity 
 	Then display a dialogue box 'You're not signed in' 
 	And 'Your session ended because there was no activity. 
 	And 'Try again' button in the dialog box
+	
