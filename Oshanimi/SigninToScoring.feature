@@ -120,7 +120,6 @@ Scenario: 1.1_10 Sign in with a valid password in the 'email or phone number' te
 	Then the 'Email textfield'is marked red. 
 	And a text 'Couldn't find your Google account' appears in the validation errors region
 
-
 Scenario Outline: 1.1_11 Sign in with valid email and unplugs internet connection 
 	Given user has 'Choose an option' dialog box displayed on the screen
 	And user clicks on 'Use another account' button
@@ -143,4 +142,5 @@ Scenario Outline: 1.1_12 Sign in with valid email and the laptop sleeps due to i
 	And display a dialogue box 'You're not signed in' 
 	And User has 'Your session ended because there was no activity' displayed on the screen
 	And 'Try again' button in the dialog box
+
 	
