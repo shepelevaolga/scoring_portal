@@ -2,9 +2,9 @@ Feature: 3.1.1.1. Sigh in with google account.
 
 Background:
     Given the web page "https://qa.ddso-spot.quantori.com/" is open in the browser
-    And user's valid credentials: email {email@google.com}, password {Password!23}, assigned phone number {+11234561234}
+    And user has a google account with valid credentials: email {email@google.com}, password {Password!23}, assigned phone number {+11234561234}
 
-Scenario Outline: 3.1.1.1_01. Sign in with full email address if the user is not logged in
+Scenario Outline: 3.1.1.1_01 Sign in with full email address if the user is not logged in
     Given user clicked on "Sign in with Google" button
     And webpage with a textfield is opened
     When User enters full email address into textfield 
@@ -16,8 +16,7 @@ Scenario Outline: 3.1.1.1_01. Sign in with full email address if the user is not
     And application webpage is opened
     And "New User" name can be changed
     And "Log Out" button is active
-    And "Drop your CSV.." button is active
-        
+    And "Drop your CSV.." button is active    
 
     Examples:
         | browsers       |
@@ -95,6 +94,7 @@ Scenario Outline: 3.1.1.1_05 Sign in  if the user is logged in the only google a
     And "New User" name can be changed
     And "Log Out" button is active
     And "Drop your CSV.." button is active
+    
     Examples:
         | browsers       |
         | Chrome         |
