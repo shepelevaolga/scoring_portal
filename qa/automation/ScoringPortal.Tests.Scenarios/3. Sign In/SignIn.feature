@@ -237,7 +237,7 @@ Scenario Outline: 3.1.1.1_13 Sign in with another google account if the user is 
     And application webpage is oped
     And "New User" name can be changed
     And "Log Out" button is active
-    And "Drop your CSV.." button is active
+    And "Drop your CSV.." button is active 
 
     Examples:
         | browsers       |
