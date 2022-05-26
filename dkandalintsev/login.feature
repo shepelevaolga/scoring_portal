@@ -1,10 +1,7 @@
 Feature: 1. Signing in with Google account
 
-Background:
-    Given user in on the https://qa.ddso-spot.quantori.com/ page
-
 Scenario: 1.01 Sign in page is available for user
-    Given user in on the https://qa.ddso-spot.quantori.com/ page
+    Given user is on the https://qa.ddso-spot.quantori.com/ page
     When user clicks "Sign in with Google" button
     Then https://accounts.google.com/ authorization page opens
 
@@ -13,7 +10,7 @@ Scenario: 1.02 User has one saved Google account on device and tries to sign in
     And users's Google accounts have this credentials:
         | email address               | phone number | password |
         | testkandalintsev@gmail.com  | +79819139630 | Test123! |
-    And user in on the https://qa.ddso-spot.quantori.com/ page
+    And user is on the https://qa.ddso-spot.quantori.com/ page
     When user clicks "Sign in with Google" button
     Then user is on the Quantori Scoring main page
 
@@ -23,27 +20,27 @@ Scenario: 1.03 User has multiple saved Google accounts on device and tries to si
         | email address               | phone number | password |
         | testkandalintsev@gmail.com  | +79819139630 | Test123! |
         | testkandalintsevd@gmail.com | +79646149307 | Test123! |
-    And user in on the https://qa.ddso-spot.quantori.com/ page
+    And user is on the https://qa.ddso-spot.quantori.com/ page
     When user clicks "Sign in with Google" button
     Then list of user's existing Google accounts is shown
 
 Scenario: 1.04 User signs in with multiple saved and logged in Google accounts
     Given user has logged in Google accounts in browser
-    And user in on the https://qa.ddso-spot.quantori.com/ page
+    And user is on the https://qa.ddso-spot.quantori.com/ page
     And user clicked "Sign in with Google" button
     When user clicks on one of his Google accounts in the list
     Then user is on the Quantori Scoring main page
 
 Scenario: 1.05 User has saved Google account, but signed out
     Given user is logged out of his Google account
-    And user in on the https://qa.ddso-spot.quantori.com/ page
+    And user is on the https://qa.ddso-spot.quantori.com/ page
     And user clicked "Sign in with Google" button
     When user clicks on one of his Google accounts in the list
     Then user needs to fill in password field for his Google account
 
 Scenario: 1.06 User signs in with saved and logged out Google account
     Given user is logged out of his Google account
-    And user in on the https://qa.ddso-spot.quantori.com/ page
+    And user is on the https://qa.ddso-spot.quantori.com/ page
     And user clicked "Sign in with Google" button
     And user filled in the password field with valid <password>
     When user clicks "Next"
@@ -51,7 +48,7 @@ Scenario: 1.06 User signs in with saved and logged out Google account
 
 Scenario: 1.07 User does not use right password for saved and logged out Google account
     Given user is logged out of his Google account
-    And user in on the https://qa.ddso-spot.quantori.com/ page
+    And user is on the https://qa.ddso-spot.quantori.com/ page
     And user clicked "Sign in with Google" button
     And user filled in the password field with invalid <password>
     When user clicks "Next"
@@ -60,13 +57,13 @@ Scenario: 1.07 User does not use right password for saved and logged out Google 
 
 Scenario: 1.08 User checks if signing in without saved Google accounts is possible
     Given user does not have saved Google accounts in browser
-    And user in on the https://qa.ddso-spot.quantori.com/ page
+    And user is on the https://qa.ddso-spot.quantori.com/ page
     When user clicks "Sign in with Google" button
     Then user sees "Email or phone" input for Google account
 
 Background:
     Given user does not have saved Google accounts in browser
-    And user in on the https://qa.ddso-spot.quantori.com/ page
+    And user is on the https://qa.ddso-spot.quantori.com/ page
     And user clicks "Sign in with Google" button
 
 Scenario: 1.09 User tries to sign in with non-existing email
