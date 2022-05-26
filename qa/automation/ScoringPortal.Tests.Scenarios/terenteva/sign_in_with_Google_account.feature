@@ -20,17 +20,18 @@ Feature: 1. Sign in to Quantori Scoring Portal with Google account feature
  		| Sign out button with sign out icon			|
 
  Scenario: 1_01. 'Sign in with Google' button on the QSPP 'User NOT signed in' version is interactive and hyperlinked
-	Given QSPP 'User NOT signed in' version is opened in a browser tab
+	Given User is on the QSPP 'User NOT signed in' version
 	When User drags cursor to the 'Sign in with Google' button
 	Then 'Sign in with Google' button is highlighted
 	And Cursor appearance is changed from standard to Link pointer
 	And Hyperlink address is shown at the bottom left corner of the page
 
- Scenario Outline: 1_02. User is redirected to Google Login page
- 	Given QSPP 'User NOT signed in' version is opened in a browser tab
+ Scenario Outline: 1_02. User is not directly signed in to the system 
+ 	Given User is on the QSPP 'User NOT signed in' version
 	And User Google account state is <User account state>
 	When User clicks on 'Sign in with Google' button
-	Then User is redirected to Google Accounts Login page
+	Then User is not directly signed in to the system 
+	And User is redirected to Google Accounts Login page
 	And Google Accounts Login page is opened in the same browser tab
 
 	  Examples: 
@@ -40,7 +41,7 @@ Feature: 1. Sign in to Quantori Scoring Portal with Google account feature
 	  | User has a Google account, is signed in it, not signed in QSPP before from the device and browser used |
 
  Scenario: 1_03. User goes straight from QSPP 'User not signed in' to QSPP 'User signed in'
-	Given QSPP 'User NOT signed in' version is opened in a browser tab
+	Given User is on the QSPP 'User NOT signed in' version
 	And User has a Google account
 	And User is signed in this Google account
 	And User has signed in to QSPP before from the device and browser used
@@ -49,36 +50,36 @@ Feature: 1. Sign in to Quantori Scoring Portal with Google account feature
 	And QSPP 'User signed in' version is opened in the same browser tab
 
  Scenario Outline: 1_04. User is signed in QSPP after managing Google account
-	Given QSPP 'User NOT signed in' version is opened in a browser tab
+	Given User is on the QSPP 'User NOT signed in' version
 	And User account state is <User account state>
-	And User has clicked on 'Sign in with Google' button on QSPP 'User not signed in'
-	And User was redirected to Google Accounts Login page
+	And User has clicked on 'Sign in with Google' button
+	And User is redirected to Google Accounts Login page
 	And Google Accounts Login page is opened in the browser tab
-	When User completes <Actions> according to <User account state>
+	When According to user account state <User account state> user completes following actions: <Actions>
 	Then User is redirected to QSPP 'User signed in' version
 	And QSPP 'User signed in' version is opened in the same browser tab
 
 	  Examples: 
-	  | User account state                                                     | Actions								 |
-	  | User has no Google account                                             | User registers an account and signs in  |
-	  | User has a Google account, is not signed in the account                | User signs in the account				 |
-	  | User has a Google account, is signed in it, not signed in QSPP before* | User chooses the account to proceed	 |
+	  | User account state																| Actions									  |
+	  | User has no Google account														| User registers an account and signs in to it|
+	  | User has a Google account, is not signed in to it		 						| User signs in to the account				  |
+	  | User has a Google account, is signed in to it, has not signed in to QSPP before*| User chooses the account to proceed		  |
 	  # *from the device and browser used
 
  Scenario: 1_05. User signs out from the QSPP
-	Given QSPP 'User signed in' version is opened in a browser tab
+	Given User is on the QSPP 'User signed in' version
 	When User clicks Sign out button marked with sign out icon
 	Then User is redirected to QSPP 'User NOT signed in' version
 	And QSPP 'User NOT signed in' version is opened in the same browser tab
 
  Scenario: 1_06. User stays signed in after QSPP 'User signed in' version is refreshed
-	Given QSPP 'User signed in' version is opened in a browser tab
+	Given User is on the QSPP 'User signed in' version
 	When User refreshes the page
 	Then User stays signed in the QSPP
 	And QSPP 'User signed in' version is opened in a browser tab
 
- Scenario: 1_07. User QSPP sign in state when user is signed out from Google account in the browser
-	Given QSPP 'User signed in' version is opened in a browser tab
+ Scenario: 1_07. User gets no access to system functionality when signed out from Google account
+	Given User is on the QSPP 'User signed in' version
 	And User's Google account page in opened in another tab in the same browser
 	And User's Google account page is currently on a display
 	When User signs out from the Google account
