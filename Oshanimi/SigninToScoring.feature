@@ -74,7 +74,7 @@ Scenario Outline: 1.1_07 Sign in with valid phone number
 
 Scenario Outline: 1.1_08 Sign in with valid saved Google account in 'Examples'
 	Given user has 'Choose an option' dialog box displayed on the screen
-	When multiple emails are displayed on the signin page to 'Choose an account to continue to quantori.com
+	When multiple emails are displayed on the signin page to 'Choose an account' 
 	Then  user enters the scoring homepage through the states in the table
 	| Listed email                            | Action | State                                          |
 	| beatricek006@gmail.com                  | Clicks | Enter homepage                                 |
