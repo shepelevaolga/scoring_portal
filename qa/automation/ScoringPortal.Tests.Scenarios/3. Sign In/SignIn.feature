@@ -26,10 +26,10 @@ Scenario Outline: 3.1.1.1_01 Sign in with full email address if the user is not 
 
 @tc:1
 
-Scenario Outline: 3.1.1.1_02 Sign in with shortened email address if the user is not logged in
+Scenario Outline: 3.1.1.1_02 Sign in with email without domain if the user is not logged in
     Given user clicked on "Sign in with Google" button
     And webpage with a textfield is opened
-    When User enters shortened email [email] address into textfield 
+    When User enters email [email] address without domain name into textfield 
     And User clicks 'Next' button
     And webpage with textfield for password is opened
     And user enters the valid password 
@@ -57,7 +57,7 @@ Scenario Outline: 3.1.1.1_03 Sign in with phone number if the user is not logged
     And user enters the valid password 
     And user clicks 'Next' button
     Then user is signed in
-    And application webpage is oped
+    And application webpage is opened
     And "New User" name can be changed
     And "Log Out" button is active
     And "Drop your CSV.." button is active
@@ -138,7 +138,7 @@ Scenario Outline: 3.1.1.1_07 Sign in if the user is logged in into google accoun
         | Microsoft Edge |
 @tc:7
 
-Scenario Outline: 3.1.1.1_08 Sign in with google account if user is logged off with valid password
+Scenario Outline: 3.1.1.1_08 Sign in with google account if user is logged out with valid password
     Given user has saved google account in the browser
     And user clicked on "Sign in with Google" button
     And webpage with a textfield for password is opened
