@@ -114,10 +114,18 @@ Scenario: 1_6.1 Log in with fresh login
    When user clicks "change the account button"
    And clicks "create an account button"
    And fills all required fields (<name>, <family name>, <user name>, <password>, <prove password>)
+   Examples:
+        | name | family name | user name       | password | prove password | 
+        | anna | kalinina    | annakalininarus | password | password       |
+
    And clicks "next button"
    And fills valid phone number
    And enter code, which system sent to the phone
    And fills reqired fields (<birth date>, <gender>)
+   Examples:
+        | birth date | gender |
+        | 10.04.1995 | female |
+    
    And clicks "next button"
    And clicks "skip button"
    And clicks "fast personolization"
@@ -125,10 +133,6 @@ Scenario: 1_6.1 Log in with fresh login
    And clicks "prove button"
    And clicks "accept button"
    Then user sees a main page
-
-    Examples:
-        | name | family name | user name       | password | prove password | birth date | gender |
-        | anna | kalinina    | annakalininarus | password | password       | 10.04.1995 | female |
 
    "well I actually did this, I understand that there are negative tests here as well, but I do not want to create a bunch of gmail accounts so I would like to skip them
    I was simply curious if creation of new account allows us log in directly, and turned out it is"
