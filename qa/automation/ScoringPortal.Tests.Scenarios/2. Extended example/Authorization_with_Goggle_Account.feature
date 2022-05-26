@@ -33,15 +33,15 @@ Scenario: 1.1.3 Authorization with another domain
 
 Scenario: 1.1.4 Pre-saved credentials of Google account in browser
   Given user has saved valid login and password of his Google account in browser
-  And user choses "Sign in as saved_account@gmail.com"
+  And user chooses "Sign in as saved_account@gmail.com"
   When user clicks "sign in"
   Then the main page of application is opened
 
 
-Scenario: 1.1.5 not updated password in browser
+Scenario: 1.1.5 User tries to log-in with old password
   Given user changed his password
   And user haven't saved changes in his browser
-  And user choses automatic filling "password" field
+  And user chooses automatic filling "password" field
   When user clicks "sign in"
   Then authorization is failed because Google can't find the account
 
