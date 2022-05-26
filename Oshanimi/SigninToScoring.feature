@@ -1,4 +1,4 @@
-Feature: 1.1 Sign in with user's Google Account to Quantori Scoring Page
+Feature: 1.1 Sign in with user's Google Account to Quantori Scoring Page 
 
 Background: 
 	Given user is on sign in 'https://qa.ddso-spot.quantori.com/' page
