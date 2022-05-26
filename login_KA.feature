@@ -8,8 +8,7 @@ Scenario: 1_1.1 Log in with valid login and password which were saved
    Given user has a Gmail account
    And user has login (<email>) and password for gmail account saved on the device
    When user clicks on this gmail account
-   Then user is logged in
-   And user sees the main page
+   Then user sees the main page
 
    Examples:
    | email                          | 
@@ -22,8 +21,7 @@ Scenario: 1_1.2 Log in with valid login and password
    When user fills "login field" with valid login
    And clicks "next button"
    And user fills "password field" with  valid credentials
-   Then user is logged in
-   And user sees the main page
+   Then user sees the main page
 
 Scenario: 1_2.1 Log in with invalid password
     Given user has a google account
@@ -31,7 +29,8 @@ Scenario: 1_2.1 Log in with invalid password
     And user clicks "next button"
     And user fills invalid password in <password> field
     And user clicks "next button"
-    Then user sees an error message and "password field" marked witb red color
+    Then user sees an error message 
+    And "password field" marked witb red color
     Examples:
     | email                          |   password       |
     | anna.kalinina@quantori.academy |   wrong_password |
@@ -40,7 +39,8 @@ Scenario: 1_2.2 Log in with invalid login
     Given user has a google account
     When user fills a invalid <email> in "login field"
     And user clicks "next button"
-    Then user sees an error message and "login field" marked witb red color
+    Then user sees an error message 
+    And "login field" marked witb red color
     Examples:
     | email                              |  
     | anna.kalinina@quantori_not_academy |  
@@ -51,8 +51,7 @@ Scenario: 1_3.1 Log in with valid phone number
    And fills <phone> number in the field
    And clicks "next button"
    And user fills valid <password> in the "password field"
-   Then user is logged in
-   And user sees the main page
+   Then user sees the main page
 
    Examples:
    | phone        | password       |
@@ -63,7 +62,8 @@ Scenario: 1_3.2 Log in with invalid phone number
    When user clicks "change the account button"
    And fills invalid <phone> number in the field
    And clicks "next button"
-   Then user sees error message and "login field" is marked red
+   Then user sees error message 
+   And "login field" is marked red
 
    Examples:
    | phone      |  
@@ -75,7 +75,8 @@ Scenario: 1_3.3 Log in with valid phone number and invalid password
     And fills <phone> number in the field
     And clicks "next button"
     And user fills <invalid password> in the "<password> field"
-    Then user sees error message and "password field" is marked red
+    Then user sees error message 
+    And "password field" is marked red
     
     Examples:
     | phone        | invalid password |
@@ -86,7 +87,8 @@ Scenario: 1_4.1 Log in using another account, which is not google one
     When user clicks "change the account button"
     And user fills yndex <login>
     And clicks "next button"
-    Then user sees the error message "google account is not finded" and "login field" marked red
+    Then user sees the error message "google account is not finded" 
+    And "login field" marked red
 
     Examples:
     | login               |  
@@ -96,14 +98,16 @@ Scenario: 1_5.1 Log in with empty login
     Given user has a google account
     When user clicks "change the account button"
     And clicks "next button"
-    Then user sees the error message "enter email address or phone number" and "login field" marked red
+    Then user sees the error message "enter email address or phone number" 
+    And "login field" marked red
 
 Scenario: 1_5.2 Log in with empty password
     Given user has a google account
     When user clicks "change the account button"
     And fills valid login
     And clicks "next button"
-    Then user sees the error message "enter password" and "password field" marked red
+    Then user sees the error message "enter password" 
+    And "password field" marked red
 
 Scenario: 1_6.1 Log in with fresh login
    Given user does not have a google account
@@ -120,8 +124,7 @@ Scenario: 1_6.1 Log in with fresh login
    And clicks "next button"
    And clicks "prove button"
    And clicks "accept button"
-   Then user is logged in 
-   And user sees a main page
+   Then user sees a main page
 
     Examples:
     | name | family name | user name       | password | prove password | birth date | gender |
@@ -132,14 +135,13 @@ Scenario: 1_6.1 Log in with fresh login
 
 Scenario: 1_7.1 User log in with 2-factor authorisation on
     Given user has a google account
-    When user clicks "change the account button"
-    And fills the valid <email> in login field
-    And clicks "next button"
-    And fills the valid <password> in password field
-    And clicks "next"
-    And passes two-factor authentication
-    Then user is logged in
-    And sees the main page
+    And user clicked "change the account button"
+    And filled the valid <email> in login field
+    And clicked "next button"
+    And filled the valid <password> in password field
+    And clicked "next"
+    When passes two-factor authentication
+    Then user sees the main page
 
     Examples:
     | email                          | password       |
